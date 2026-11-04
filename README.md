@@ -4,7 +4,9 @@ Aplicativo web (PWA) de acompanhamento e estudo de economia, feito por mim para 
 
 > 🔒 **O acesso ao aplicativo e o código-fonte são privados.** Este repositório é uma apresentação do projeto. Posso mostrar o código em uma conversa ou dar acesso ao repositório a quem estiver avaliando meu trabalho: [dalmeidasdev@gmail.com](mailto:dalmeidasdev@gmail.com).
 
-![Tela inicial](docs/img/01-inicio.png)
+![Tela de login do Economia](docs/img/01-inicio.png)
+
+![Painel inicial com os principais indicadores](docs/img/06-dashboard.png)
 
 ## O que ele faz
 
@@ -21,9 +23,16 @@ Aplicativo web (PWA) de acompanhamento e estudo de economia, feito por mim para 
 |---|---|
 | ![Mercado](docs/img/02-mercado.png) | ![Calculadoras](docs/img/03-calculadoras.png) |
 
-| Operações | Celular |
-|---|---|
-| ![Operações](docs/img/04-operacoes.png) | ![Versão para celular](docs/img/05-celular.png) |
+<table>
+  <tr>
+    <td align="center"><img src="docs/img/04-operacoes.png" alt="Operações" height="420"></td>
+    <td align="center"><img src="docs/img/05-celular.png" alt="Versão para celular" height="420"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Operações</b></td>
+    <td align="center"><b>Celular</b></td>
+  </tr>
+</table>
 
 ## Princípios do projeto
 
@@ -45,11 +54,11 @@ Aplicativo web (PWA) de acompanhamento e estudo de economia, feito por mim para 
 
 ```mermaid
 flowchart LR
-    U[Usuário<br/>navegador ou PWA] --> V[Vercel<br/>Next.js]
-    V --> S[(Supabase<br/>Postgres, Auth, Storage)]
-    S -- coletas agendadas --> V
-    V --> BC[API do Banco Central]
-    V --> YF[Yahoo Finance<br/>não oficial]
+    U["Usuário<br/>navegador ou PWA"] --> V["Vercel<br/>Next.js"]
+    V <--> S[("Supabase<br/>Postgres, Auth, Storage")]
+    S -. "agenda as coletas" .-> V
+    V --> BC["API do Banco Central"]
+    V --> YF["Yahoo Finance<br/>(não oficial)"]
 ```
 
 Os dados são coletados em horários agendados no banco (a cada 15 minutos no pregão para bolsa e dólar, e algumas vezes por dia útil para os dados do Banco Central) e guardados com histórico.
@@ -74,3 +83,8 @@ Em evolução. Investimentos e day trading entram na ordem em que chegarem no cu
 ## Contato
 
 [dalmeidasdev@gmail.com](mailto:dalmeidasdev@gmail.com) · [github.com/dalmeidasdev](https://github.com/dalmeidasdev)
+
+---
+
+<sub>Gráficos com TradingView Lightweight Charts™, © TradingView, Inc. ([tradingview.com](https://www.tradingview.com)).<br>
+© 2026 Diego Almeida. Todos os direitos reservados. As imagens mostram uma conta de teste com dados fictícios.</sub>
